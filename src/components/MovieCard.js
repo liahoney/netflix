@@ -26,7 +26,6 @@ const MovieCard = ({ item }) => {
       }}
       onClick={onClickMovieCard}
     >
-      <Link to={`/movies/${item.id}`}></Link>
       <div className="overlay">
         <h1>{item.title}</h1>
         <div>

@@ -25,7 +25,7 @@ function getMovies() {
         genreApi,
       ]);
       console.log('genreList',genreList)
-      
+
       dispatch({
         type: "GET_MOVIES_SUCCESS",
         payload: {
@@ -35,6 +35,14 @@ function getMovies() {
           loading: false,
           genreList: genreList.data.genres,
         },
+      })
+
+      dispatch({
+        type: "SELECTED_MOVIES",
+        payload: {
+          
+        }
+        
       })
       // console.log("popular", popularMovies.data);
       // console.log("topRated", topRatedMovies);
