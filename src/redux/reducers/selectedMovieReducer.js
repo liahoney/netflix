@@ -1,10 +1,10 @@
-let initialState = {
-    popularMovies: {},
-    topRatedMovies: {},
-    upComingMovies: {},
-    loading: true,
+// let initialState = {
+//     popularMovies: {},
+//     topRatedMovies: {},
+//     upComingMovies: {},
+//     loading: true,
   
-  };
+//   };
   
   // function selectedMovieReducer(state = initialState, action) {
   //   let { type, payload } = action;
@@ -20,5 +20,5 @@ let initialState = {
   
   
   
-  export default selectedMovieReducer;
+  // export default selectedMovieReducer;
   
