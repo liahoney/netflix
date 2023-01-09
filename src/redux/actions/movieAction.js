@@ -1,4 +1,5 @@
 import api from "../api";
+import {useParams} from 'react-router-dom'
 const API_KEY = process.env.REACT_APP_API_KEY;
 function getMovies() {
   return async (dispatch) => {
@@ -36,11 +37,11 @@ function getMovies() {
           genreList: genreList.data.genres,
         },
       })
-
+     let { index } = useParams();
       dispatch({
         type: "SELECTED_MOVIES",
         payload: {
-          
+          index: index
         }
         
       })

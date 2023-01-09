@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux'
 import { useNavigate } from "react-router-dom"
 import { useParams} from 'react-router-dom'
 const MovieDetailCard = ({item}) => {
+  const { movieList } = useSelector(state=> state.movie)
   let { id } = useParams();
     // const { popularMovies, upComingMovies, topRatedMovies,genreList} = useSelector(state => state.movie)
    
@@ -25,6 +26,8 @@ const MovieDetailCard = ({item}) => {
       }}
     
     >
+
+     
       This is movie Detail
       {id}
       {/* <button onClick={movieDetail}>MovieDetail</button>  */}

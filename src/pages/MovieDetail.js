@@ -7,7 +7,7 @@ import MovieNote from "../components/MovieNote";
 
 const MovieDetail = ({ movies }) => {
   let { id } = useParams();
-
+  let { index } = useParams();
   const { popularMovies, topRatedMovies, upComingMovies, loading } =
     useSelector((state) => state.movie);
   console.log("popularMovies?", popularMovies);
@@ -17,13 +17,12 @@ const MovieDetail = ({ movies }) => {
   let movieDetail = useSelector((state) => state.movie);
   useEffect(() => {
     dispatch(movieAction.getMovies());
+    dispatch({type:"SELECTED_MOVIES", payload:{index:index} })
   }, []);
 
   return (
     <div>
-      <MovieNote movies={popularMovies}>
-        
-      </MovieNote>
+      <MovieNote movies={movies.id}></MovieNote>
       {/* <MovieNote movies={topRatedMovies} />
       <MovieNote movies={upComingMovies} /> */}
     </div>

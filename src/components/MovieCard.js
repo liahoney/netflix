@@ -7,6 +7,7 @@ import { Link } from "react-router-dom"
 const MovieCard = ({ item }) => {
   console.log('item?',item)
     const { genreList} = useSelector(state => state.movie)
+   
     const navigate = useNavigate();
 
     const onClickMovieCard = (id) => {
