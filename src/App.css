@@ -25,3 +25,10 @@ body{
   height: 200px;
 }
 
+.overlay{
+  opacity: 0
+}
+
+.card:hover .overlay{
+  opacity:1
+}

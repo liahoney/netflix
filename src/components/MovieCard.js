@@ -5,7 +5,7 @@ import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom"
 import { Link } from "react-router-dom"
 const MovieCard = ({ item }) => {
-  console.log('item?',item)
+  // console.log('item?',item)
     const { genreList} = useSelector(state => state.movie)
    
     const navigate = useNavigate();
@@ -13,7 +13,7 @@ const MovieCard = ({ item }) => {
     const onClickMovieCard = (id) => {
         navigate(`/movies/${item.id}`);
     }
-    console.log("moviecard item?", item.poster_path)
+    // console.log("moviecard item?", item.poster_path)
   return (
     <div
       className="card-info"
@@ -27,7 +27,7 @@ const MovieCard = ({ item }) => {
       }}
       onClick={onClickMovieCard}
     >
-      <div className="overlay">
+      <div>
         <h1>{item.title}</h1>
         <div>
           {item.genre_ids.map((id) => (
