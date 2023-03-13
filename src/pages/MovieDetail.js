@@ -8,8 +8,8 @@ import MovieCard from '../components/MovieCard';
 import MovieDetailCard from '../components/MovieDetailCard';
 
 const MovieDetail = ({ movies, item }) => {
-  let { id } = useParams();
-  let { index } = useParams();
+  // let { id } = useParams();
+  // let { index } = useParams();
   const { popularMovies, topRatedMovies, upComingMovies, loading } =
     useSelector((state) => state.movie);
   // console.log("popularMovies?", popularMovies);
@@ -28,7 +28,7 @@ const MovieDetail = ({ movies, item }) => {
   return (
     <div>
     Hello , The name of this Movie is.
-   <MovieDetailCard movies={popularMovies}/>
+   <MovieDetailCard movies={popularMovies} />
     </div>
   );
 };

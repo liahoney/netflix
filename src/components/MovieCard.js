@@ -9,11 +9,19 @@ const MovieCard = ({ item }) => {
     const { genreList} = useSelector(state => state.movie)
    
     const navigate = useNavigate();
-
+     console.log('item??', item)
     const onClickMovieCard = (id) => {
-        navigate(`/movies/${item.id}`);
+        navigate(`/movies/${item.id}`, {
+          state: {
+            id: item.id,
+            poster_path: item.poster_path,
+            title: item.title,
+            overview: item.overview,
+          }
+        });
     }
-    // console.log("moviecard item?", item.poster_path)
+
+ 
   return (
     <div
       className="card-info"

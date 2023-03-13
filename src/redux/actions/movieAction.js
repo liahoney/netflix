@@ -2,6 +2,7 @@ import api from "../api";
 import {useParams} from 'react-router-dom'
 const API_KEY = process.env.REACT_APP_API_KEY;
 function getMovies() {
+  let movieDetail = useSelector((state) => state.movie);
   return async (dispatch) => {
     try {
       dispatch({ type: "GET_MOVIES_REQUEST" });
@@ -17,12 +18,17 @@ function getMovies() {
       const upComingApi = api.get(
         `/movie/upcoming?api_key=${API_KEY}&language=en-US&page=1`
       );
+      
+      const recommendMovieApi = api.get(
+        `/movie/${movie_id}/recommendations?api_key=${API_KEY}&language=en-US&page=1`
+      )
       const genreApi = api.get(`/genre/movie/list?api_key=${API_KEY}&language=en-US`)
 
-      let [popularMovies, topRatedMovies, upComingMovies,genreList] = await Promise.all([
+      let [popularMovies, topRatedMovies, upComingMovies,recommendMovies,genreList] = await Promise.all([
         popularMovieApi,
         topRatedApi,
         upComingApi,
+        recommendMovieApi,
         genreApi,
       ]);
       console.log('genreList',genreList)
@@ -33,6 +39,7 @@ function getMovies() {
           popularMovies: popularMovies.data,
           topRatedMovies: topRatedMovies.data,
           upComingMovies: upComingMovies.data,
+          recommendMovies: recommendMovies.data,
           loading: false,
           genreList: genreList.data.genres,
         },
